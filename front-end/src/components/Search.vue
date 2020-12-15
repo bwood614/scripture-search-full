@@ -79,6 +79,12 @@ export default {
   width: 30px;
   height: 30px;
   margin-right: 4px;
+  transition: width 0.5s ease;
+}
+
+.search-button:hover {
+  width: 35px;
+  height: auto;
 }
 
 .page-title {

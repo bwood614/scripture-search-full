@@ -155,10 +155,8 @@ export default {
   }
 
   .graph-preview-container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 85%;
-    margin: 0px auto;
+    flex-direction: column;
+    align-items: center;
   }
 
   .graph-item {

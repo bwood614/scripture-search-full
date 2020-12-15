@@ -39,6 +39,7 @@ export default {
   created() {
     this.getGalleryItems();
   },
+  inject: ['notyf'],
   methods: {
     async getGalleryItems() {
       try {
@@ -53,9 +54,11 @@ export default {
       try {
         await axios.delete("/api/galleryitems/" + item._id);
         this.getGalleryItems();
+        this.notyf.success('Graph deleted');
         return true;
       } catch (error) {
         console.log(error);
+          this.notyf.error('Failed to delete graph.');
       }
     },
   }

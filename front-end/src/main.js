@@ -4,6 +4,8 @@ import router from './router'
 import mock from './swMockData.js'
 import yearMockData from './caMockData.js'
 import wrMock from './wrMockData.js'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 Vue.config.productionTip = false
 
@@ -68,5 +70,13 @@ let data = {
 new Vue({
   router,
   data,
+  provide: () => {
+    return {
+      notyf: new Notyf({
+        duration: 3000,
+        position: {x:'center',y:'top'}
+      })
+    }
+  },
   render: h => h(App)
 }).$mount('#app')
